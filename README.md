@@ -322,10 +322,28 @@ These limitations are stated to distinguish demonstrated capabilities from possi
 
 I'm interested in opportunities and conversations around **Business Intelligence, Data Analytics, Commercial Analytics, Revenue Analytics, and Operational Performance**.
 
-**Abodunrin Oketade** · Ontario, Canada
+**Abodunrin Oketade**
 
-[GitHub](https://github.com/Richie-Rokka) · [LinkedIn](https://www.linkedin.com/in/abodunrin)
+📍 Ontario, Canada
+🔗 
+
+<p>
+<a href="https://www.linkedin.com/in/abodunrin-oketade">
+<img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/>
+</a>
+
+<a href="mailto:aoketade@gmail.com">
+<img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white"/>
+</a>
+
+<a href="https://github.com/Richie-Rokka">
+<img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github"/>
+</a>
+
+</p>
+
+</div>
 
 ---
 
-*Turning business data into actionable decisions.*
+### Turning business data into actionable decisions.
