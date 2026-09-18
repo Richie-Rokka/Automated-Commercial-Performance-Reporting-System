@@ -4,7 +4,7 @@
 
 Built with Python, SQL Server, Excel, Power BI, and Power Automate Desktop, this project brings commercial data through a repeatable reporting workflow—from extraction and validation to executive reporting and management recommendations.
 
-[**View the Power BI Report**](reports/Automated_Commercial_Performance_Report.pbix) · [**Executive Excel Report**](reports/adventureworks_executive_report.xlsx) · [**Commercial Excel Report**](reports/adventureworks_commercial_performance_report.xlsx)
+[**View the Power BI Report**](reports/Automated_Commercial_Performance_Report.pbix) · [**Executive Excel Report**](reports/adventureworks_executive_report.xlsx) · 
 
 ---
 
