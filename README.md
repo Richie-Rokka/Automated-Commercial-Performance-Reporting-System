@@ -16,7 +16,7 @@ Built with Python, SQL Server, Excel, Power BI Desktop, Windows Task Scheduler, 
 
 > **Project type:** Portfolio implementation demonstrating a practical data-to-decision workflow. It is not a production-hosted analytics service.
 
-**Explore:** [Power BI dashboard](#power-bi-dashboard) · [Solution architecture](#solution-architecture) · [Run the pipeline](#python-pipeline) · [Documentation](#documentation)
+**Explore:** [Power BI dashboard](#power-bi-dashboard) · [Solution architecture](#solution-architecture) · [Run the pipeline](run_commercial_reporting.bat) · [Documentation](#documentation)
 
 ---
 
