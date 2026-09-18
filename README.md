@@ -405,8 +405,6 @@ This is a portfolio implementation of commercial reporting and local desktop rep
 - No automatic correction of source data, report logic, or dashboard layout.
 - Unattended Power BI Desktop operation while logged out has not been validated.
 
-The **14-step BI reporting framework** is a planning and governance guide—not a claim that every step is a separate software module or that the automation is fully productionized.
-
 ---
 
 ## License
