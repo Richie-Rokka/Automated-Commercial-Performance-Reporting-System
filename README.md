@@ -2,8 +2,6 @@
 
 **An end-to-end commercial analytics workflow for actual sales, CRM pipeline visibility, and management decision support.**
 
-[Power BI Report](reports/Automated_Commercial_Performance_Report.pbix) · [Automated Excel Report](reports/adventureworks_executive_report.xlsx) · [Automation Runbook](docs/automation_runbook.md)
-
 ![Python](https://img.shields.io/badge/Python-3.14-blue)
 ![SQL Server](https://img.shields.io/badge/SQL%20Server-AdventureWorks-red)
 ![Power BI](https://img.shields.io/badge/Power%20BI-Desktop-yellow)
@@ -11,10 +9,12 @@
 [![pytest](https://img.shields.io/badge/Tests-pytest-0A9EDC?logo=pytest&logoColor=white)](https://pytest.org/)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
-
 Built with Python, SQL Server, Excel, Power BI Desktop, Windows Task Scheduler, and Power Automate Desktop, this project connects data extraction and validation to reporting-ready datasets, management recommendations, and a repeatable local report-preparation workflow.
 
+[Power BI Report](reports/Automated_Commercial_Performance_Report.pbix) · [Automated Excel Report](reports/adventureworks_executive_report.xlsx) · [Automation Runbook](docs/automation_runbook.md)
+
 ---
+
 ## Explore
 
 | Resource | Link |
