@@ -1,0 +1,36 @@
+﻿# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Environment settings
+.env
+.env.*
+!.env.example
+
+# IDE and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Logs and temporary files
+*.log
+*.tmp
+
+# Raw source datasets (keep local)
+data/raw/
+
+# Customer-level reporting export (keep local)
+data/reporting/customer_performance.csv
+
+# Generated reporting CSVs (keep local)
+data/reporting/*.csv
+data/reporting/maven_crm/
