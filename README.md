@@ -14,9 +14,17 @@
 
 Built with Python, SQL Server, Excel, Power BI Desktop, Windows Task Scheduler, and Power Automate Desktop, this project connects data extraction and validation to reporting-ready datasets, management recommendations, and a repeatable local report-preparation workflow.
 
-> **Project type:** Portfolio implementation demonstrating a practical data-to-decision workflow. It is not a production-hosted analytics service.
+---
+## Explore
 
-**Explore:** [Power BI dashboard](#power-bi-dashboard) · [Solution architecture](#solution-architecture) · [Run the pipeline](run_commercial_reporting.bat) · [Documentation](#documentation)
+| Resource | Link |
+|---|---|
+| **Power BI dashboard screenshots** | [View all four dashboard pages](#power-bi-report) |
+| **Solution architecture** | [View the workflow](#solution-architecture) |
+| **Run the pipeline** | [Local execution instructions](#scheduling-and-execution) |
+| **Documentation** | [Open project documentation](#documentation) |
+
+> **Note:** The dashboard link opens the screenshot gallery in this README. GitHub cannot run a local Windows batch file or open a PBIX as an interactive report. Run the pipeline on your configured Windows machine using the local execution instructions.
 
 ---
 
@@ -50,6 +58,8 @@ Built with Python, SQL Server, Excel, Power BI Desktop, Windows Task Scheduler, 
 ## Power BI Report
 
 **Primary deliverable:** [`Automated_Commercial_Performance_Report.pbix`](reports/Automated_Commercial_Performance_Report.pbix)
+
+The screenshots below are static previews of the report pages. To interact with filters and visuals, open the PBIX in Power BI Desktop on a machine with the required data sources configured.
 
 ### 1. Executive Overview
 Headline actual-performance and pipeline KPIs, monthly revenue and gross-profit trends, pipeline-stage metrics, and executive observations.
@@ -218,9 +228,8 @@ The flow completed a fresh-start test, reached the PDF export stage, and the PDF
 - The 30-second refresh delay is fixed; it does not prove every refresh has completed.
 - Refresh and export navigation use captured screen coordinates.
 - Display scaling, resolution, window position, or Power BI UI changes can invalidate coordinates.
-- PDF review and saving remain manual.
+- Report review and saving remain manual.
 - Automatic PDF distribution, publishing, and automatic report correction are not implemented.
-- Reliable operation while logged out or with a locked Windows session has not been established.
 
 ![PAD workflow screenshot 1](docs/screenshots/PAD1.png)
 
@@ -238,6 +247,8 @@ The Python scheduled task is separate from the Power BI Desktop UI flow. Do not 
 
 ### 🚀 Run the Python pipeline
 
+The repository's `run_commercial_reporting.bat` file is a local Windows launcher. Clicking its link on GitHub does not execute it. Run it from your local project folder, or use the Python command below.
+
 From the project root in Windows PowerShell:
 
 ```powershell
@@ -251,6 +262,16 @@ Additional entry points:
 python -m src.generate_adventureworks_report
 python -m src.generate_management_recommendations
 ```
+
+### Run using the Windows batch file
+
+From File Explorer, open the repository folder and double-click `run_commercial_reporting.bat`, or run it from PowerShell in the repository root:
+
+```powershell
+.\\run_commercial_reporting.bat
+```
+
+This is a local Windows action and requires the project's configured environment and dependencies.
 
 ### 🚀 Run PAD manually
 
@@ -397,7 +418,6 @@ Licensed under the MIT License. See [`LICENSE`](LICENSE).
 I’m interested in opportunities and conversations around **Business Intelligence, Data Analytics, Commercial Analytics, Revenue Analytics, and Operational Performance**.
 
 📍 Ontario, Canada
-🔗 
 
 <p>
 <a href="https://www.linkedin.com/in/abodunrin-oketade">
