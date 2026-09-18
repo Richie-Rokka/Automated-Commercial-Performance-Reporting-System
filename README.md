@@ -10,6 +10,7 @@ Built with Python, SQL Server, Excel, Power BI Desktop, Windows Task Scheduler, 
 [![Excel](https://img.shields.io/badge/Excel-Reporting-217346?logo=microsoftexcel&logoColor=white)](https://www.microsoft.com/microsoft-365/excel)
 [![Power Automate Desktop](https://img.shields.io/badge/Power%20Automate%20Desktop-Workflow-0066FF?logo=powerautomate&logoColor=white)](https://powerautomate.microsoft.com/)
 [![pytest](https://img.shields.io/badge/Tests-pytest-0A9EDC?logo=pytest&logoColor=white)](https://pytest.org/)
+![License](https://img.shields.io/badge/License-MIT-green)
 
 [**Power BI report**](reports/Automated_Commercial_Performance_Report.pbix) · [**Executive Excel report**](reports/adventureworks_executive_report.xlsx) 
 
