@@ -1,8 +1,6 @@
 # Automated Commercial Performance Reporting System
 
-**An end-to-end commercial analytics and reporting solution for actual sales performance, CRM pipeline visibility, and management decision support.**
-
-Built with Python, SQL Server, Excel, Power BI Desktop, Windows Task Scheduler, and Microsoft Power Automate Desktop (PAD), this project turns two business data sources into reporting datasets, executive outputs, and management recommendations.
+**An end-to-end commercial analytics workflow for actual sales, CRM pipeline visibility, and management decision support.**
 
 [Power BI Report](reports/Automated_Commercial_Performance_Report.pbix) · [Automated Excel Report](reports/adventureworks_executive_report.xlsx) · [Automation Runbook](docs/automation_runbook.md)
 
@@ -13,20 +11,28 @@ Built with Python, SQL Server, Excel, Power BI Desktop, Windows Task Scheduler, 
 [![pytest](https://img.shields.io/badge/Tests-pytest-0A9EDC?logo=pytest&logoColor=white)](https://pytest.org/)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
+
+Built with Python, SQL Server, Excel, Power BI Desktop, Windows Task Scheduler, and Power Automate Desktop, this project connects data extraction and validation to reporting-ready datasets, management recommendations, and a repeatable local report-preparation workflow.
+
+> **Project type:** Portfolio implementation demonstrating a practical data-to-decision workflow. It is not a production-hosted analytics service.
+
+**Explore:** [Power BI dashboard](#power-bi-dashboard) · [Solution architecture](#solution-architecture) · [Run the pipeline](#python-pipeline) · [Documentation](#documentation)
+
 ---
 
-## Executive Overview
+## At a glance
 
-Commercial teams need consistent visibility into historical performance, profitability, and sales pipeline activity. This project combines:
+|                         |                                                                         |
+| ----------------------- | ----------------------------------------------------------------------- |
+| **Business focus**      | Commercial performance, profitability, CRM pipeline, management actions |
+| **Actuals data**        | AdventureWorks SQL Server database                                      |
+| **Pipeline data**       | Maven CRM opportunity dataset                                           |
+| **Primary deliverable** | Power BI report                                                         |
+| **Reporting outputs**   | Reporting-ready datasets and generated Excel workbook                   |
+| **Automation**          | Python pipeline plus local PAD report-preparation workflow              |
+| **Validation evidence** | Recorded pipeline run and scoped regression tests                       |
 
-- Actual commercial performance from AdventureWorks.
-- CRM pipeline performance from Maven CRM.
-- Management observations and recommendations derived from analytical outputs.
-- An Excel report generated automatically by the Python pipeline.
-- A four-page Power BI report for interactive analysis.
-- Scheduled Python execution and local desktop report-preparation automation.
-
-AdventureWorks and Maven CRM are treated as distinct business domains. They are presented together for commercial visibility without assuming that their records can be joined through a reliable shared business key.
+---
 
 ## Business Questions Addressed
 
@@ -38,6 +44,34 @@ AdventureWorks and Maven CRM are treated as distinct business domains. They are 
 | Customer and seller | Revenue and gross-profit performance |
 | CRM pipeline | Opportunities by stage, region, sales agent, product, and account |
 | Management action | Findings and recommendations for margin, profitability, pipeline visibility, and prioritization |
+
+---
+
+## Power BI Report
+
+**Primary deliverable:** [`Automated_Commercial_Performance_Report.pbix`](reports/Automated_Commercial_Performance_Report.pbix)
+
+### 1. Executive Overview
+Headline actual-performance and pipeline KPIs, monthly revenue and gross-profit trends, pipeline-stage metrics, and executive observations.
+
+![Executive Overview](docs/screenshots/01_Executive_Overview.png)
+
+### 2. Actual Commercial Performance
+Revenue and gross margin by category, product performance, customer revenue versus gross profit, and seller gross-profit performance.
+
+![Actual Commercial Performance](docs/screenshots/02_Actual_Commercial_Performance.png)
+
+### 3. Pipeline Performance
+Opportunity volume and closed value by stage, regional activity, sales-agent pipeline activity, product pipeline, and account performance.
+
+![Pipeline Performance](docs/screenshots/03_Pipeline_Performance.png)
+
+### 4. Management Recommendations
+An action register with priority, area, finding, recommendation, and metric. Topics include gross margin, customer profitability, seller profitability, pipeline visibility, and pipeline prioritization.
+
+![Management Recommendations](docs/screenshots/04_Management_Recommendations.png)
+
+---
 
 ## Solution Architecture
 
@@ -75,7 +109,9 @@ AdventureWorks (actual sales)       Maven CRM (opportunities)
 
 The Python implementation is separated into AdventureWorks, Maven CRM, and reporting modules. PAD operates the local Power BI Desktop interface; this is not a Power BI Service workflow.
 
-## Data Sources
+---
+
+## Data Sources & Analytical Output
 
 ### 📊 AdventureWorks — actual commercial performance
 
@@ -101,6 +137,8 @@ Source files in `data/raw/maven_crm/`:
 - `sales_teams.csv`
 
 The pipeline standardizes known product-name variation before validation and derives pipeline business-state and value metrics.
+
+---
 
 ## Python Reporting Pipeline
 
@@ -155,29 +193,7 @@ Historical product-cost matching uses inclusive `StartDate` and `EndDate` bounda
 
 These are recorded run results, not guaranteed values for future executions.
 
-## Power BI Report
-
-**Primary deliverable:** [`Automated_Commercial_Performance_Report.pbix`](reports/Automated_Commercial_Performance_Report.pbix)
-
-### 1. Executive Overview
-Headline actual-performance and pipeline KPIs, monthly revenue and gross-profit trends, pipeline-stage metrics, and executive observations.
-
-![Executive Overview](docs/screenshots/01_Executive_Overview.png)
-
-### 2. Actual Commercial Performance
-Revenue and gross margin by category, product performance, customer revenue versus gross profit, and seller gross-profit performance.
-
-![Actual Commercial Performance](docs/screenshots/02_Actual_Commercial_Performance.png)
-
-### 3. Pipeline Performance
-Opportunity volume and closed value by stage, regional activity, sales-agent pipeline activity, product pipeline, and account performance.
-
-![Pipeline Performance](docs/screenshots/03_Pipeline_Performance.png)
-
-### 4. Management Recommendations
-An action register with priority, area, finding, recommendation, and metric. Topics include gross margin, customer profitability, seller profitability, pipeline visibility, and pipeline prioritization.
-
-![Management Recommendations](docs/screenshots/04_Management_Recommendations.png)
+---
 
 ## Desktop Report Automation
 
@@ -212,6 +228,8 @@ The flow completed a fresh-start test, reached the PDF export stage, and the PDF
 
 See [Automation Runbook](docs/automation_runbook.md) and [Report Export documentation](docs/report_export.md).
 
+---
+
 ## Scheduling and Execution
 
 The Python pipeline is configured in Windows Task Scheduler for daily execution at 6:00 AM. A recorded scheduled-task test returned `0x0`, and the associated pipeline log showed `Status: PASS`.
@@ -243,6 +261,8 @@ python -m src.generate_management_recommendations
 5. Confirm refresh completion before relying on the report.
 6. Review the PDF export and save it manually if correct.
 
+---
+
 ## Validation and Testing
 
 The pipeline includes source/row checks, structural and critical-field validation, key uniqueness and financial checks, and report-output checks. Failures are logged and raised rather than silently treated as valid zero activity.
@@ -256,6 +276,7 @@ Run tests from the project root:
 ```powershell
 python -m pytest test/ -v
 ```
+---
 
 ## 🛠️ Technology Stack
 
@@ -271,6 +292,8 @@ python -m pytest test/ -v
 | Windows Task Scheduler | Scheduled Python execution |
 | pytest | Automated tests |
 | Git / GitHub | Version control and portfolio publication |
+
+---
 
 ## 🏗️ Repository Structure
 
@@ -325,6 +348,8 @@ Automated Commercial Performance Reporting System/
     └── test_workbook.py
 ```
 
+---
+
 ## Setup Requirements
 
 - Windows
@@ -337,11 +362,15 @@ Automated Commercial Performance Reporting System/
 
 Adapt the local SQL Server connection settings to your environment.
 
+---
+
 ## Documentation
 
 - [AdventureWorks documentation](docs/adventure_documentation.md)
 - [Automation runbook](docs/automation_runbook.md)
 - [Report export documentation](docs/report_export.md)
+
+---
 
 ## Scope and Limitations
 
@@ -356,6 +385,8 @@ This is a portfolio implementation of commercial reporting and local desktop rep
 - Unattended Power BI Desktop operation while logged out has not been validated.
 
 The **14-step BI reporting framework** is a planning and governance guide—not a claim that every step is a separate software module or that the automation is fully productionized.
+
+---
 
 ## License
 
